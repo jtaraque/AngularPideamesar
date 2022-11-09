@@ -29,7 +29,13 @@ export class BaresService {
     // bares.push(octavio,casaMacario,esi);
     // return bares;
 
-    return this.client.get<Bar[]>("http://localhost/platos/getBares");
+    let info = {
+      latitud : 40,
+      logitud : 5,
+      radio : 1000
+    };	
+
+    return this.client.post<Bar[]>("http://localhost/platos/getBares",info);
 
   }
 }
